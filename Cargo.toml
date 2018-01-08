@@ -1,0 +1,11 @@
+[package]
+name = "rust_diesel_struct_generator"
+version = "0.1.0"
+authors = ["ryota suzuki <ryota@fringe81.com>"]
+
+[dependencies.mysql]
+version = "*"
+features = ["rustc-serialize"]
+
+[dependencies]
+regex = "0.2"
