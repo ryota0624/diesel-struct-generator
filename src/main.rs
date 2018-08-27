@@ -1,6 +1,11 @@
 extern crate mysql;
 extern crate rust_diesel_struct_generator;
+extern crate dotenv;
 
+#[macro_use]
+extern crate dotenv_codegen;
+
+use dotenv::dotenv;
 use mysql::Opts;
 use mysql::OptsBuilder;
 use std::convert::From;
@@ -13,9 +18,10 @@ use rust_diesel_struct_generator::structs::table::Table;
 
 
 fn main() {
-    let hostname = //;
-    let user = //;
-    let db_name = //;
+    dotenv().ok();
+    let hostname = dotenv!("HOSTNAME");
+    let user = dotenv!("DB_USER");
+    let db_name = dotenv!("DB_NAME");
 
     let mut builder = OptsBuilder::new();
     builder.ip_or_hostname(Some(hostname.to_string()))

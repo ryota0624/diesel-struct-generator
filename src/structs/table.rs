@@ -32,9 +32,9 @@ pub struct New{camel_table_name}<'a> {{
     fn diesel_struct_fields_for_new(&self) -> String {
         self.fields.iter()
             .filter(|f| !f.is_auto_incremant())
-            .fold("".to_string(), (|fields_string, field| {
+            .fold("".to_string(), |fields_string, field| {
             fields_string.to_string() + &field.diesel_struct_field_for_new()
-        }))
+        })
     }
 }
 
@@ -54,9 +54,9 @@ pub struct {table_name} {{
     }
 
     fn diesel_struct_fields(&self) -> String {
-        self.fields.iter().fold("".to_string(), (|fields_string, field| {
+        self.fields.iter().fold("".to_string(), |fields_string, field| {
             fields_string.to_string() + &field.diesel_struct_field()
-        }))
+        })
     }
 }
 
@@ -82,9 +82,9 @@ table!{{
     }
 
     fn diesel_schema_fields(&self) -> String {
-        self.fields.iter().fold("".to_string(), (|fields_string, field| {
+        self.fields.iter().fold("".to_string(), |fields_string, field| {
             fields_string.to_string() + &field.clone().diesel_schema_field()
-        }))
+        })
     }
 }
 
