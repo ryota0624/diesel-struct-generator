@@ -2,12 +2,15 @@ pub mod types {
     pub const VARCHAR: &str = "varchar";
     pub const TEXT: &str = "text";
     pub const DATETIME: &str = "datetime";
+    pub const DATE: &str = "date";
     pub const TIMESTAMP: &str = "timestamp";
     pub const TINYINT: &str = "tinyint";
     pub const BIGINT: &str = "bigint";
     pub const INT: &str = "int";
     pub const DECIMAL: &str = "decimal";
     pub const DOUBLE: &str = "double";
+    pub const CHAR: &str = "char";
+    pub const FLOAT: &str = "float";
 
     pub mod diesel_struct {
         pub const BIGINT: &str = "i64";
@@ -17,8 +20,10 @@ pub mod types {
         pub const TINYINT: &str = "i8";
         pub const TIMESTAMP: &str = "chrono::NaiveDateTime";
         pub const DATETIME: &str = "chrono::NaiveDateTime";
+        pub const DATE: &str = "chrono::NaiveDateTime";
         pub const TEXT: &str = "String";
         pub const VARCHAR: &str = "String";
+        pub const CHAR: &str = "String";
     }
 
     pub mod diesel_schema {
@@ -29,7 +34,9 @@ pub mod types {
         pub const TINYINT: &str = "Tinyint";
         pub const TIMESTAMP: &str = "Timestamp";
         pub const DATETIME: &str = "Datetime";
+        pub const DATE: &str = "DateTime";
         pub const TEXT: &str = "Text";
         pub const VARCHAR: &str = "Text";
+        pub const CHAR: &str = "Text";
     }
 }

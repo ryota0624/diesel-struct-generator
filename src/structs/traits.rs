@@ -15,7 +15,10 @@ pub trait TransformStructDef {
             (types::TINYINT.to_string(), types::diesel_struct::TINYINT),
             (types::DECIMAL.to_string(), types::diesel_struct::FLOAT),
             (types::DATETIME.to_string(), types::diesel_struct::DATETIME),
-            (types::TIMESTAMP.to_string(), types::diesel_struct::TIMESTAMP)
+            (types::TIMESTAMP.to_string(), types::diesel_struct::TIMESTAMP),
+            (types::CHAR.to_string(), types::diesel_struct::CHAR),
+            (types::FLOAT.to_string(), types::diesel_struct::FLOAT),
+            (types::DATE.to_string(), types::diesel_struct::DATE),
         ].iter().cloned().collect::<HashMap<_, _>>()
             .get(&key)
             .map(|str_ref| str_ref.to_string())
@@ -65,7 +68,10 @@ pub trait TransformSchemaDef {
             (types::TINYINT.to_string(), types::diesel_schema::TINYINT),
             (types::DECIMAL.to_string(), types::diesel_schema::FLOAT),
             (types::DATETIME.to_string(), types::diesel_schema::DATETIME),
-            (types::TIMESTAMP.to_string(), types::diesel_schema::TIMESTAMP)
+            (types::TIMESTAMP.to_string(), types::diesel_schema::TIMESTAMP),
+            (types::DATE.to_string(), types::diesel_schema::DATE),
+            (types::FLOAT.to_string(), types::diesel_schema::FLOAT),
+            (types::CHAR.to_string(), types::diesel_schema::CHAR)
         ].iter().cloned().collect::<HashMap<_, _>>()
             .get(&key)
             .map(|str_ref| str_ref.to_string())
