@@ -1,3 +1,4 @@
+// todo mappingはなんとかエレガントにできないものか
 use constants::*;
 use std::collections::HashMap;
 
